@@ -4,9 +4,8 @@
 *.pyc
 __pycache__
 
-core/__pycache__
-core/migrations/__pycache__
-faculty_site/__pycache__
+**/__pycache__
+
 #db.sqlite3
 media
 
