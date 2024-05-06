@@ -1,23 +1,8 @@
 # prof-backend
-## Зависимости
-Создаем виртуальное окружение
 
-`python3 -m venv .venv`
-
-Входим в виртуальное окружение
-
-`source .venv/bin/activate` 
-
-Устанавливаем зависимости
-
-`python -m pip install -r requirements.txt`
-
-
-## About
-Макет дизайна по ссылке - https://www.figma.com/design/0L5ytO5WnLZS21dIxNNemU/%D0%9F%D0%A0%D0%9E%D0%A4?node-id=0-1&t=AyNVWlVSMbdXOJUP-0
-### Как запустить?
-Да как обычный джанго. Админка - admin / admin. 
-`python manage.py runserver`
+## О проекте
+### Макет дизайна
+https://www.figma.com/design/0L5ytO5WnLZS21dIxNNemU/%D0%9F%D0%A0%D0%9E%D0%A4?node-id=0-1&t=AyNVWlVSMbdXOJUP-0
 
 ### Что надо?
 Сделать модели для всей информации на страницах и сделать эндпойнты двух видов - категории со списками категорий/статей и, собственно, статьи. 
@@ -28,3 +13,28 @@
 
 ### Почему так долго делается?
 Оно слишком просто, я теряюсь и думаю, что всё не так однозначно.
+
+
+## Зависимости
+
+### venv
+1. Создаем виртуальное окружение
+
+Linux, MacOS:
+`python3 -m venv .venv`
+
+Windows:
+`.venv\Scripts\activate.bat`
+
+2. Входим в виртуальное окружение
+
+`source .venv/bin/activate` 
+
+3. Устанавливаем зависимости
+
+`python -m pip install -r requirements.txt`
+
+4. Запускаем
+ 
+`python manage.py runserver`
+
