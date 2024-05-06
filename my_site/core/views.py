@@ -58,7 +58,7 @@ def category_detail(request, path):
                 "child_categories": node.children.all(),
                 "articles": node.articles.all(),
                 "is_art": True,
-                "art": article.content,
+                "art": article.text,
             },
         )
     except Article.DoesNotExist as Error:
