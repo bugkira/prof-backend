@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load mptt_tags %}
+<html>
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+    <style>
+    body {
+        font-family: 'Lobster';
+        font-size: 22px;
+    }
+    </style>
+</head>
+
+<body>
+
+    <head>
+        <title>My Site</title>
+    </head>
+
+    <body>
+        <div class="breadcrumbs">
+            хлебновые крошьки...
+            {% for pair in breadcrumbs %}
+            > <a href="{{pair.link}}">{{pair.cat_name}}</a>
+            {% endfor %}
+        </div>
+        <ul class="root">
+            Содерживание сайта
+            {% recursetree nodes %}
+            <li>
+                <a href="/{{ node.get_ancestors|tree_path:"/" }}/{{node.name}}">{{node.name}}</a>
+                {% if not node.is_leaf_node %}
+                <ul class="children">
+                    {{ children }}
+                </ul>
+                {% endif %}
+            </li>
+            {% endrecursetree %}
+        </ul>
+        {{description}}
+        {% if child_categories %}
+        <h2>Подкатегории</h2>
+        <ul>
+            {% for category in child_categories %}
+            <li>{{ category.name }}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>В этой категории нет подкатегорий.</p>
+        {% endif %}
+        {% if articles %}
+        <h2>Статьи</h2>
+        <ul>
+            {% for article in articles %}
+            <a href="/{{ node.get_ancestors|tree_path:"/"}}/{{node.name}}">{{article.title}}</a>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>В этой категории нет статей.</p>
+        {% endif %}
+        {% if is_art %}
+        <h2>Статья</h2>
+        <ul>
+            {{art|safe}}
+        </ul>
+        {% endif %}
+        <footer>
+            <h2>Футер-нутер</h2>
+            <p>Phone: {{ contact_info.phone }}</p>
+            <p>Email: {{ contact_info.email }}</p>
+            <p>Address: {{ contact_info.address }}</p>
+        </footer>
+    </body>
+
+</html>
