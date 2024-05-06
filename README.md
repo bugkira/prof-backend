@@ -1,4 +1,4 @@
-t# prof-backend
+# prof-backend
 ## Зависимости
 Создаем виртуальное окружение
 
@@ -10,7 +10,7 @@ t# prof-backend
 
 Устанавливаем зависимости
 
-`pip install django django-mptt mptt-admin django-ckeditor`
+`python -m pip install -r requirements.txt`
 
 
 ## About
