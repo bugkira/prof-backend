@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load mptt_tags %}
+<html>
+
+<head>
+    <title>My Site</title>
+</head>
+
+<body>
+    {{path}}
+</body>
+<ul class="root">
+    {% recursetree nodes %}
+    <li>
+        <a href="/{{ node.get_ancestors|tree_path:"/" }}/{{node.name}}">{{node.name}}</a>
+        {% if not node.is_leaf_node %}
+        <ul class="children">
+            {{ children }}
+        </ul>
+        {% endif %}
+    </li>
+    {% endrecursetree %}
+</ul>
+
+</html>

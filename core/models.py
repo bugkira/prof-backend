@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django_ckeditor_5.fields import CKEditor5Field
 from mptt.models import MPTTModel, TreeForeignKey
 
 
@@ -17,6 +18,7 @@ class Section(MPTTModel):
     parent = TreeForeignKey(
         "self", on_delete=models.CASCADE, null=True, blank=True, related_name="children"
     )
+    description = models.TextField(default="")
 
     class MPTTMeta:
         order_insertion_by = ["name"]
@@ -27,7 +29,7 @@ class Section(MPTTModel):
 
 class Article(models.Model):
     title = models.CharField(max_length=255)
-    content = models.TextField()
+    text = CKEditor5Field("Text")
     section = models.ForeignKey(
         Section, on_delete=models.CASCADE, related_name="articles"
     )
