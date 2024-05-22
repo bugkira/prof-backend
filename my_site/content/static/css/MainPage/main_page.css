@@ -26,11 +26,7 @@
   left: calc(50% - 100px);
   filter: blur(2.71px);
   border-radius: 50%;
-  background: radial-gradient(
-                  50% 50% at 50% 50%,
-                  rgba(255, 255, 255, 0) 76.56%,
-                  rgba(7, 131, 255, 0.25)
-  );
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 76.56%, rgba(7, 131, 255, 0.25));
   border: 1.4px solid #a1d0ff;
   box-sizing: border-box;
   width: 200px;
@@ -218,3 +214,5 @@
   color: var(--color-white);
   font-family: var(--font-nunito-sans);
 }
+
+/*# sourceMappingURL=main_page.css.map */

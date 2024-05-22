@@ -2,25 +2,30 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="{% static 'css/Includes/index.css' %}" rel="stylesheet">
-  <link href="{% static 'css/Includes/header.css' %}" rel="stylesheet">
-  <link href="{% static 'css/Includes/footer.css' %}" rel="stylesheet">
+    <link href="{% static 'css/Includes/index.css' %}" rel="stylesheet">
+    <link href="{% static 'css/Includes/header.css' %}" rel="stylesheet">
+    <link href="{% static 'css/Includes/footer.css' %}" rel="stylesheet">
 
-  <title>{% block title %}{% endblock %}</title>
+    <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@400;500;600;700&display=swap"
+    />
 
-  {% block css %}
+    <title>{% block title %}{% endblock %}</title>
 
-  {% endblock %}
+    {% block css %}
+
+    {% endblock %}
 </head>
 <body id="body">
 {% include 'Includes/header.html' %}
 <main id="main">
-  {% block main %}
+    {% block main %}
 
-  {% endblock %}
+    {% endblock %}
 </main>
 {% include 'Includes/footer.html' %}
 {% block js %}
