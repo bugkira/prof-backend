@@ -17,7 +17,7 @@ def category_detail(request, path):
             node = Section.objects.get(name=categories[0])
             return render(
                 request,
-                "base.html",
+                "MainPage/main_page.html",
                 context={
                     "description": node.description,
                     "child_categories": node.children.all(),
@@ -38,7 +38,7 @@ def category_detail(request, path):
         node = node.children.get(name=path[-1])
         return render(
             request,
-            "base.html",
+            "MainPage/main_page.html",
             context={
                 "description": node.description,
                 "child_categories": node.children.all(),
@@ -52,7 +52,7 @@ def category_detail(request, path):
         article = node.articles.get(title=path[-1])
         return render(
             request,
-            "base.html",
+            "MainPage/main_page.html",
             context={
                 "description": node.description,
                 "child_categories": node.children.all(),
@@ -69,4 +69,4 @@ def category_detail(request, path):
 
 
 def home(request):
-    return render(request, "base.html")
+    return render(request, "MainPage/main_page.html")

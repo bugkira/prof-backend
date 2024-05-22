@@ -1,5 +1,6 @@
 {% extends 'Includes/index.html' %}
 {% load static %}
+{% load mptt_tags %}
 {% block title %}
 {% endblock %}
 
@@ -8,4 +9,114 @@
 {% endblock %}
 
 {% block main %}
+<div class="breadcrumbs">
+    хлебновые крошьки...
+    {% for pair in breadcrumbs %}
+    > <a href="{{pair.link}}">{{pair.cat_name}}</a>
+    {% endfor %}
+</div>
+<ul class="root">
+    Содерживание сайта
+    {% recursetree nodes %}
+    <li>
+        <a href="/{{ node.get_ancestors|tree_path:"/" }}/{{node.name}}">{{node.name}}</a>
+        {% if not node.is_leaf_node %}
+        <ul class="children">
+            {{ children }}
+        </ul>
+        {% endif %}
+    </li>
+    {% endrecursetree %}
+</ul>
+{{description}}
+{% if child_categories %}
+<h2>Подкатегории</h2>
+<ul>
+    {% for category in child_categories %}
+    <li>{{ category.name }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>В этой категории нет подкатегорий.</p>
+{% endif %}
+{% if articles %}
+<h2>Статьи</h2>
+<ul>
+    {% for article in articles %}
+    <a href="/{{ node.get_ancestors|tree_path:"/"}}/{{node.name}}">{{article.title}}</a>
+    {% endfor %}
+</ul>
+{% else %}
+<p>В этой категории нет статей.</p>
+{% endif %}
+{% if is_art %}
+<h2>Статья</h2>
+<ul>
+    {{art|safe}}
+</ul>
+
+
+
+<div class="iphone-13-14-11">
+    <div class="ellipse-parent">
+        <div class="frame-child"></div>
+        <img class="frame-item" alt="" src="./public/group-814.svg" />
+
+        <div class="frame-inner"></div>
+        <div class="wrapper">
+            <div class="div">ПрофОргам</div>
+        </div>
+        <div class="container">
+            <div class="div">Мат.помощь</div>
+        </div>
+        <div class="frame">
+            <div class="div">Мат.помощь</div>
+        </div>
+        <div class="arrowsarrow-left-parent">
+            <img class="arrowsarrow-left-icon" alt="" />
+
+            <b class="b">Меню</b>
+            <img class="arrowsarrow-left-icon" alt="" />
+        </div>
+    </div>
+    <div class="parent">
+        <div class="div3">Какое-то лютое описание</div>
+        <div class="div4">
+            Пишу зачем нужен сайт Пишу зачем нужен сайт Пишу зачем нужен сайт Пишу
+            зачем нужен сайт Пишу зачем нужен сайт Пишу зачем нужен сайт Пишу
+            зачем нужен сайт Пишу зачем нужен сайт Пишу зачем нужен
+        </div>
+    </div>
+    <div class="group">
+        <div class="div5">Правовуха</div>
+        <div class="frame-div">
+            <div class="b">Об образовании</div>
+        </div>
+        <div class="frame-div">
+            <div class="b">Правила внутреннего распорядка</div>
+        </div>
+        <div class="frame-div">
+            <div class="b">Методичка по праву</div>
+        </div>
+        <div class="frame-div">
+            <div class="b">Структура образовательного учреждения</div>
+        </div>
+        <div class="frame-div">
+            <div class="b">Примеры ситуаций</div>
+        </div>
+    </div>
+    <div class="frame-parent">
+        <div class="parent1">
+            <div class="b">файлы</div>
+            <div class="b">файлы</div>
+            <div class="b">файлы</div>
+        </div>
+        <div class="parent1">
+            <div class="b">файлы</div>
+            <div class="b">файлы</div>
+            <div class="b">файлы</div>
+        </div>
+    </div>
+</div>
+{% endif %}
 {% endblock %}
