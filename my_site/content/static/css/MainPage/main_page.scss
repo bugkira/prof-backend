@@ -22,7 +22,7 @@
 
 .frame-inner {
   position: absolute;
-  top: calc(50% - 64px);
+  top: calc(50% - 80px);
   left: calc(50% - 100px);
   filter: blur(2.71px);
   border-radius: 50%;
@@ -47,8 +47,7 @@
 .frame,
 .wrapper {
   position: absolute;
-  top: 113px;
-  left: 142px;
+  margin-left: -30%;
   box-shadow: 0 2px 7px rgba(24, 83, 174, 0.25);
   border-radius: var(--br-20xl);
   background-color: var(--color-dodgerblue-100);
@@ -104,6 +103,7 @@
   height: 390px;
   overflow: hidden;
   flex-shrink: 0;
+  margin: auto;
 }
 
 .div3,
@@ -195,7 +195,7 @@
 }
 
 .frame-parent {
-  width: 390px;
+  width: 100%;
   flex: 1;
   background-color: #184180;
   justify-content: center;
@@ -209,10 +209,10 @@
   width: 100%;
   position: relative;
   background-color: var(--color-white);
-  height: 1085px;
   justify-content: flex-start;
   padding: 0 var(--padding-base);
   gap: var(--gap-13xl);
+  margin: var(--gap-13xl) 0;
   text-align: left;
   font-size: var(--font-size-base);
   color: var(--color-white);

@@ -1,6 +1,15 @@
 body {
   margin: 0;
   line-height: normal;
+  background-color: var(--color-white);
+  height: 1085px;
+  justify-content: flex-start;
+  padding: 0 var(--padding-base);
+  gap: var(--gap-13xl);
+  text-align: center;
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+  font-family: var(--font-nunito-sans);
 }
 
 :root {

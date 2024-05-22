@@ -1,6 +1,12 @@
 <footer>
-    <h2>Футер-нутер</h2>
-    <p>Phone: {{ contact_info.phone }}</p>
-    <p>Email: {{ contact_info.email }}</p>
-    <p>Address: {{ contact_info.address }}</p>
+    <div class="frame-parent">
+        <div class="parent1">
+            <div class="b">Phone:</div>
+            <div class="b">{{ contact_info.phone }}</div>
+        </div>
+        <div class="parent1">
+            <div class="b">Address:</div>
+            <div class="b">{{ contact_info.address }}</div>
+        </div>
+    </div>
 </footer>

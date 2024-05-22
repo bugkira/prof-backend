@@ -127,7 +127,8 @@ USE_TZ = True
 
 STATIC_URL = "content/static/"
 STATIC_ROOT = "content/static"
-STATICFILES_DIRS = []
+STATICFILES_DIRS = ('content/static',)
+STATIC_ROOT = BASE_DIR
 
 CKEDITOR_UPLOAD_PATH = "content/uploads/"
 # Default primary key field type
