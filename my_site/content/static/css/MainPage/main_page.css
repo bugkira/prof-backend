@@ -38,6 +38,9 @@
   position: relative;
   font-weight: 500;
 }
+.div a {
+  text-decoration: none;
+}
 
 .container,
 .frame,
@@ -77,6 +80,9 @@
 
 .b {
   position: relative;
+}
+.b a {
+  text-decoration: none;
 }
 
 .arrowsarrow-left-parent {

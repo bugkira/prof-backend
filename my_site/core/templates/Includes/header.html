@@ -1,15 +1,14 @@
+{% load mptt_tags %}
 <header>
     <div class="ellipse-parent">
         <div class="frame-child">
+            {% if child_categories %}
+            {% for category in child_categories %}
             <div class="wrapper">
-                <div class="div">ПрофОргам</div>
+                <div class="div"><a href="">{{ category.name }}</a></div>
             </div>
-            <div class="wrapper">
-                <div class="div">ПрофОргам</div>
-            </div>
-            <div class="wrapper">
-                <div class="div">ПрофОргам</div>
-            </div>
+            {% endfor %}
+            {% endif %}
         </div>
         <img class="frame-item" alt="" src="./public/group-814.svg"/>
 
