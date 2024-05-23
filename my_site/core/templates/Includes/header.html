@@ -1,12 +1,15 @@
 {% load mptt_tags %}
 <header>
-    {% if breadcrumbs|length == 1 %}
+    {{ breadcrumbs|length }}
+    {% if breadcrumbs|length == 1 or breadcrumbs|length == 0 %}
     <div class="ellipse-parent">
         <div class="frame-child small_c">
             {% if child_categories %}
             {% for category in child_categories %}
             <div class="wrapper sw">
-                <div class="div"><a href="/{{ category.get_ancestors|tree_path:"/" }}/{{category.name}}">{{ category.name }}</a></div>
+                <a style="text-decoration: none; color: white" href="/{{ category.get_ancestors|tree_path:"/" }}/{{category.name}}">
+                    <div class="div">{{ category.name }}</div>
+                </a>
             </div>
             {% endfor %}
             {% endif %}
@@ -24,7 +27,9 @@
             {% if child_categories %}
             {% for category in child_categories %}
             <div class="wrapper bw">
-                <div class="div"><a href="/{{ category.get_ancestors|tree_path:"/" }}/{{category.name}}">{{ category.name }}</a></div>
+                <a style="text-decoration: none; color: white" href="/{{ category.get_ancestors|tree_path:"/" }}/{{category.name}}">
+                    <div class="div">{{ category.name }}</div>
+                </a>
             </div>
             {% endfor %}
             {% endif %}

@@ -382,10 +382,11 @@
   left: calc(50% - 115px);
 }
 
-.sw {
-
+footer {
+  width: calc(100% + 32px);
+  margin-left: -16px;
 }
 
-.bw {
-
+.desc {
+  margin: auto 300px;
 }

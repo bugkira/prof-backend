@@ -21,7 +21,7 @@ def category_detail(request, path):
                 context={
                     "description": node.description,
                     "child_categories": node.children.all(),
-                    "articles": node.articles.all(),
+                    "articles": None,
                     "cur_node": node,
                 },
             )
@@ -72,4 +72,16 @@ def category_detail(request, path):
 
 
 def home(request):
-    return render(request, "MainPage/main_page.html")
+    child_categories = []
+    description = "Физхех круто"
+    sections = Section.objects.all()
+    cur_node = Section.objects.get(name="Главная страница")
+    return render(request, "MainPage/main_page.html", context={
+    "description": cur_node.description,
+    "child_categories": cur_node.children.all(),
+    "articles": None,
+    "is_art": False,
+    "art": None,
+    "cur_node": cur_node,
+    },
+    )

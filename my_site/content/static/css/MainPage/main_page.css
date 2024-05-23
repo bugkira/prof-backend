@@ -373,4 +373,13 @@
   left: calc(50% - 115px);
 }
 
+footer {
+  width: calc(100% + 32px);
+  margin-left: -16px;
+}
+
+.desc {
+  margin: auto 300px;
+}
+
 /*# sourceMappingURL=main_page.css.map */
