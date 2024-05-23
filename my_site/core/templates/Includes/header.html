@@ -2,10 +2,10 @@
 <header>
     {% if breadcrumbs|length == 1 %}
     <div class="ellipse-parent">
-        <div class="frame-child">
+        <div class="frame-child small_c">
             {% if child_categories %}
             {% for category in child_categories %}
-            <div class="wrapper">
+            <div class="wrapper sw">
                 <div class="div"><a href="/{{ category.get_ancestors|tree_path:"/" }}/{{category.name}}">{{ category.name }}</a></div>
             </div>
             {% endfor %}
@@ -13,17 +13,17 @@
         </div>
         <img class="frame-item" alt="" src="./public/group-814.svg"/>
 
-        <div class="frame-inner"></div>
+        <div class="frame-inner small"></div>
         <div class="upper_menu">
             <b class="b" style="color: var(--black-titles)">Меню</b>
         </div>
     </div>
     {% else %}
     <div class="ellipse-parent">
-        <div class="frame-child">
+        <div class="frame-child big_c">
             {% if child_categories %}
             {% for category in child_categories %}
-            <div class="wrapper">
+            <div class="wrapper bw">
                 <div class="div"><a href="/{{ category.get_ancestors|tree_path:"/" }}/{{category.name}}">{{ category.name }}</a></div>
             </div>
             {% endfor %}
@@ -31,7 +31,7 @@
         </div>
         <img class="frame-item" alt="" src="./public/group-814.svg" />
 
-        <div class="frame-inner"></div>
+        <div class="frame-inner big"></div>
         {% for pair in breadcrumbs %}
             {% if forloop.last %}
                 <b class="b1">{{pair.cat_name}}</b>

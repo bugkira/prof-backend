@@ -1,12 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const radius = 100; // радиус круга
-    const center = {x: 100, y: 100}; // центр круга
+    let radius = 115; // радиус круга
+    let center = {x: 115, y: 115}; // центр круга
 
 
     const container = $('.wrapper');
     console.log(container);
     for (let i = 0; i < container.length; i++) {
         container[i].style.position = "relative";
+        if (".bw" in container[i].classList) {
+            radius = 140; // радиус круга
+            center = {x: 140, y: 140};
+        }
     }
 
     for (let i = 0; i < container.length; i++) {

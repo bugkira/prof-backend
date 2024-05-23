@@ -2,12 +2,12 @@
   position: absolute;
   top: 95px;
   left: 95px;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 50%;
   background-color: transparent;
   border: 2px solid var(--color-white);
   box-sizing: border-box;
-  width: 200px;
-  height: 200px;
 }
 
 .frame-item {
@@ -22,15 +22,11 @@
 
 .frame-inner {
   position: absolute;
-  top: calc(50% - 80px);
-  left: calc(50% - 100px);
   filter: blur(2.71px);
   border-radius: 50%;
   background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 76.56%, rgba(7, 131, 255, 0.25));
   border: 1.4px solid #a1d0ff;
   box-sizing: border-box;
-  width: 200px;
-  height: 200px;
   opacity: 0.5;
 }
 
@@ -347,6 +343,34 @@
 
 .b2 {
   color: var(--black-titles);
+}
+
+.big {
+  width: 250px;
+  height: 250px;
+  top: calc(50% - 80px);
+  left: calc(50% - 125px);
+}
+
+.small {
+  width: 200px;
+  height: 200px;
+  top: calc(50% - 80px);
+  left: calc(50% - 100px);
+}
+
+.big_c {
+  width: 280px;
+  height: 280px;
+  top: calc(50% - 138px);
+  left: calc(50% - 140px);
+}
+
+.small_c {
+  width: 230px;
+  height: 230px;
+  top: calc(50% - 108px);
+  left: calc(50% - 115px);
 }
 
 /*# sourceMappingURL=main_page.css.map */
