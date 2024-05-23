@@ -22,6 +22,7 @@ def category_detail(request, path):
                     "description": node.description,
                     "child_categories": node.children.all(),
                     "articles": node.articles.all(),
+                    "cur_node": node,
                 },
             )
         except Section.DoesNotExist as Error:
@@ -43,6 +44,7 @@ def category_detail(request, path):
                 "description": node.description,
                 "child_categories": node.children.all(),
                 "articles": node.articles.all(),
+                "cur_node": node,
             },
         )
     except Section.DoesNotExist as Error:
@@ -59,6 +61,7 @@ def category_detail(request, path):
                 "articles": node.articles.all(),
                 "is_art": True,
                 "art": article.text,
+                "cur_node": node,
             },
         )
     except Article.DoesNotExist as Error:

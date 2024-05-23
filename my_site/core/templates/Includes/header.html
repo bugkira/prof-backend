@@ -1,11 +1,12 @@
 {% load mptt_tags %}
 <header>
+    {% if breadcrumbs|length == 1 %}
     <div class="ellipse-parent">
         <div class="frame-child">
             {% if child_categories %}
             {% for category in child_categories %}
             <div class="wrapper">
-                <div class="div"><a href="">{{ category.name }}</a></div>
+                <div class="div"><a href="/{{ category.get_ancestors|tree_path:"/" }}/{{category.name}}">{{ category.name }}</a></div>
             </div>
             {% endfor %}
             {% endif %}
@@ -13,11 +14,59 @@
         <img class="frame-item" alt="" src="./public/group-814.svg"/>
 
         <div class="frame-inner"></div>
-        <div class="arrowsarrow-left-parent">
-            <img class="arrowsarrow-left-icon" alt=""/>
-
-            <b class="b">Меню</b>
-            <img class="arrowsarrow-left-icon" alt=""/>
+        <div class="upper_menu">
+            <b class="b" style="color: var(--black-titles)">Меню</b>
         </div>
     </div>
+    {% else %}
+    <div class="ellipse-parent">
+        <div class="frame-child">
+            {% if child_categories %}
+            {% for category in child_categories %}
+            <div class="wrapper">
+                <div class="div"><a href="/{{ category.get_ancestors|tree_path:"/" }}/{{category.name}}">{{ category.name }}</a></div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+        <img class="frame-item" alt="" src="./public/group-814.svg" />
+
+        <div class="frame-inner"></div>
+        {% for pair in breadcrumbs %}
+            {% if forloop.last %}
+                <b class="b1">{{pair.cat_name}}</b>
+            {% endif %}
+        {% endfor %}
+        <div class="upper_menu">
+            <a href="/{{ cur_node.get_ancestors|tree_path:"/" }}">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_27_209)">
+                    <path d="M7.00012 16H25.0001" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15 24L7 16L15 8" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                    <clipPath id="clip0_27_209">
+                        <rect width="32" height="32" fill="white"/>
+                    </clipPath>
+                </defs>
+            </svg>
+            </a>
+
+
+            <b class="b" style="color: var(--black-titles)">Меню</b>
+
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: transparent">
+                <g clip-path="url(#clip0_27_209)">
+                    <path d="M7.00012 16H25.0001" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15 24L7 16L15 8" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                    <clipPath id="clip0_27_209">
+                        <rect width="32" height="32" fill="transparent"/>
+                    </clipPath>
+                </defs>
+            </svg>
+        </div>
+    </div>
+    {% endif %}
 </header>

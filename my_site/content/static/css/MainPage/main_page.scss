@@ -41,6 +41,7 @@
 .div {
   position: relative;
   font-weight: 500;
+
   a {
     text-decoration: none;
   }
@@ -84,6 +85,7 @@
 
 .b {
   position: relative;
+
   a {
     text-decoration: none;
   }
@@ -223,4 +225,111 @@
   font-size: var(--font-size-base);
   color: var(--color-white);
   font-family: var(--font-nunito-sans);
+}
+
+.div {
+  position: relative;
+  font-weight: 500;
+}
+
+.wrapper {
+  position: absolute;
+  top: 328px;
+  left: 133px;
+  box-shadow: 0 2px 7px rgba(24, 83, 174, 0.25);
+  border-radius: var(--br-20xl);
+  background-color: var(--color-dodgerblue-100);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-5xs) 13px;
+  text-align: left;
+}
+
+.arrowsarrow-left-icon {
+  width: 32px;
+  position: relative;
+  height: 32px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.b1 {
+  position: absolute;
+  top: calc(50% + 23px);
+  left: calc(50% - 59px);
+  font-size: 20px;
+  color: #0783ff;
+}
+
+.arrowsarrow-left-icon1 {
+  width: 32px;
+  position: relative;
+  height: 32px;
+  overflow: hidden;
+  flex-shrink: 0;
+  opacity: 0;
+}
+
+.arrowsarrow-left-parent {
+  position: absolute;
+  top: 30px;
+  left: calc(50% - 180px);
+  width: 360px;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--font-size-lg);
+  color: var(--black-titles);
+}
+
+.arrowsarrow-left-group,
+.container {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.frame-child {
+  position: absolute;
+  top: 95px;
+  left: 95px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid var(--color-white);
+  box-sizing: border-box;
+  width: 200px;
+  height: 200px;
+}
+
+.frame-item {
+  top: 18px;
+  left: 18px;
+  width: 354.3px;
+  height: 354.3px;
+  display: none;
+  mix-blend-mode: darken;
+}
+
+.upper_menu {
+  position: relative;
+  top: 32px;
+  display: flex;
+  flex-direction: row;
+  a {
+
+    svg {
+      width: fit-content;
+    }
+  }
+  svg {
+    width: fit-content;
+  }
+  b {
+    width: max-content;
+    margin: auto;
+  }
 }

@@ -9,37 +9,6 @@
 {% endblock %}
 
 {% block main %}
-<div class="breadcrumbs">
-    хлебновые крошьки...
-    {% for pair in breadcrumbs %}
-    > <a href="{{pair.link}}">{{pair.cat_name}}</a>
-    {% endfor %}
-</div>
-<ul class="root">
-    Содерживание сайта
-    {% recursetree nodes %}
-    <li>
-        <a href="/{{ node.get_ancestors|tree_path:"/" }}/{{node.name}}">{{node.name}}</a>
-        {% if not node.is_leaf_node %}
-        <ul class="children">
-            {{ children }}
-        </ul>
-        {% endif %}
-    </li>
-    {{node.name}}
-    {% endrecursetree %}
-</ul>
-{{description}}
-{% if child_categories %}
-<h2>Подкатегории</h2>
-<ul>
-    {% for category in child_categories %}
-    <li>{{ category.name }}</li>
-    {% endfor %}
-</ul>
-{% else %}
-<p>В этой категории нет подкатегорий.</p>
-{% endif %}
 {% if articles %}
 <h2>Статьи</h2>
 <ul>
