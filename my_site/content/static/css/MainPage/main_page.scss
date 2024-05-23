@@ -333,3 +333,27 @@
     margin: auto;
   }
 }
+
+.frame-content {
+  top: 422px;
+  background-color: var(--color-white);
+  overflow: hidden;
+}
+
+.frame-content {
+  margin: 32px auto;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  border-radius: var(--br-base);
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: var(--padding-base);
+  box-sizing: border-box;
+}
+
+.b2 {
+  color: var(--black-titles);
+}

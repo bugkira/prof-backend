@@ -9,20 +9,13 @@
 {% endblock %}
 
 {% block main %}
-{% if articles %}
-<h2>Статьи</h2>
-<ul>
-    {% for article in articles %}
-    <a href="/{{ node.get_ancestors|tree_path:"/"}}/{{node.name}}">{{article.title}}</a>
-    {% endfor %}
-</ul>
-{% endif %}
-{% if is_art %}
-<h2>Статья</h2>
-<ul>
-    {{art|safe}}
-</ul>
-{% endif %}
+
+<!--{% if is_art %}-->
+<!--<h2>Статья</h2>-->
+<!--<ul>-->
+<!--    {{art|safe}}-->
+<!--</ul>-->
+<!--{% endif %}-->
 
 {% if not articles %}
 <div class="iphone-13-14-11">
@@ -53,5 +46,12 @@
         </div>
     </div>
 </div>
+{% else %}
+{% for article in articles %}
+<div class="frame-content">
+    <div class="b2">{{article.title}}</div>
+    <div class="b2">Открыть/скачать</div>
+</div>
+{% endfor %}
 {% endif %}
 {% endblock %}
